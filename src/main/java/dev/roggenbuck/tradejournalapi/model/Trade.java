@@ -1,4 +1,4 @@
-package dev.roggenbuck.tradejounalapi.model;
+package dev.roggenbuck.tradejournalapi.model;
 
 public class Trade {
     private String symbol;

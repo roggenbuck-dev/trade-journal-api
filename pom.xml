@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>dev.roggenbuck</groupId>
-    <artifactId>trade-jounal-api</artifactId>
+    <artifactId>trade-journal-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>trade-jounal-api</name>
     <description>trade-jounal-api</description>

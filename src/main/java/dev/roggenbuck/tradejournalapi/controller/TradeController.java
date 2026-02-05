@@ -1,7 +1,7 @@
-package dev.roggenbuck.tradejounalapi.controller;
+package dev.roggenbuck.tradejournalapi.controller;
 
-import dev.roggenbuck.tradejounalapi.model.Trade;
-import dev.roggenbuck.tradejounalapi.service.TradeService;
+import dev.roggenbuck.tradejournalapi.model.Trade;
+import dev.roggenbuck.tradejournalapi.service.TradeService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

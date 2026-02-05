@@ -1,6 +1,6 @@
-package dev.roggenbuck.tradejounalapi.service;
+package dev.roggenbuck.tradejournalapi.service;
 
-import dev.roggenbuck.tradejounalapi.model.Trade;
+import dev.roggenbuck.tradejournalapi.model.Trade;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

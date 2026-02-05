@@ -1,4 +1,4 @@
-package dev.roggenbuck.tradejounalapi.controller;
+package dev.roggenbuck.tradejournalapi.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,4 +1,4 @@
-package dev.roggenbuck.tradejounalapi;
+package dev.roggenbuck.tradejournalapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package dev.roggenbuck.tradejounalapi;
+package dev.roggenbuck.tradejournalapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
