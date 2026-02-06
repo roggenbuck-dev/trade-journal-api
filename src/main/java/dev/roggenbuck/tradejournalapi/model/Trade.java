@@ -8,7 +8,7 @@ public class Trade {
     private double pnl;
 
     // leerer Konstruktor für Spring/Jackson (JSON in Objekt übersetzen)
-    public Trade(){};
+    public Trade(){}
 
     public Trade(Integer id,String symbol, double entryPrice, double exitPrice, double pnl){
         this.id = id;
