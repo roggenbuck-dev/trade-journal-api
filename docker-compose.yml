@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:18
+    container_name: tradejournal-db
+    environment:
+      POSTGRES_DB: tradejournal
+      POSTGRES_USER: trade_user
+      POSTGRES_PASSWORD: change_me_please
+    ports:
+      - "5432:5432"
+    volumes:
+      - tradejournal_db_data:/var/lib/postgresql/data
+
+volumes:
+  tradejournal_db_data:
