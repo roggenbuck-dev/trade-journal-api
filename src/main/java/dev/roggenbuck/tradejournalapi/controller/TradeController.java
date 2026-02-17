@@ -22,19 +22,19 @@ public class TradeController {
     }
 
     @PostMapping("/trades")
+    @ResponseStatus(HttpStatus.CREATED)
     public Trade addTrade(@RequestBody Trade trade) {
-        tradeService.addTrades(trade);
-        return trade;
+        return tradeService.addTrades(trade);
     }
 
     @PutMapping("/trades/{id}")
-    public Trade updateTrade(@PathVariable int id, @RequestBody Trade updatedTrade) {
+    public Trade updateTrade(@PathVariable Integer id, @RequestBody Trade updatedTrade) {
         return tradeService.updateTrades(id, updatedTrade);
     }
 
     @DeleteMapping("/trades/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteTrade(@PathVariable int id) {
+    public void deleteTrade(@PathVariable Integer id) {
         tradeService.deleteTrades(id);
     }
 }
