@@ -1,6 +1,12 @@
 package dev.roggenbuck.tradejournalapi.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "trades")
 public class Trade {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String symbol;
     private double entryPrice;
