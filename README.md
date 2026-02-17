@@ -1,12 +1,13 @@
 # Trade Journal API
 
-A simple RESTful API built with Spring Boot to manage trading journal entries in memory.
+A RESTful backend API built with Spring Boot to manage trading journal entries using persistent PostgreSQL storage.
 
-This project was created as a clean, structured backend practice project with a focus on:
+This project was created as a structured backend practice project with a focus on:
 - RESTful API design
-- separation of concerns (controller / service / model)
-- clean and maintainable code
-- correct HTTP status handling
+- Separation of concerns (controller / service / repository / model)
+- Database integration using Spring Data JPA
+- Clean and maintainable code
+- Proper HTTP status handling
 
 ---
 
@@ -16,7 +17,7 @@ This project was created as a clean, structured backend practice project with a 
 - Retrieve all trades
 - Update existing trades
 - Delete trades
-- In-memory data storage
+- Persistent storage using PostgreSQL
 - Proper HTTP status responses (200, 204, 404)
 
 ---
@@ -25,6 +26,9 @@ This project was created as a clean, structured backend practice project with a 
 
 - Java 17
 - Spring Boot
+- Spring Data JPA (Hibernate)
+- PostgreSQL 18
+- Docker & Docker Compose
 - Maven
 - Git & GitHub
 - Postman (manual API testing)
@@ -54,6 +58,8 @@ src/main/java
     │   └── HealthController.java
     ├── service
     │   └── TradeService.java
+    ├── repository
+    │   └── TradeRepository.java
     └── model
         └── Trade.java
 ```
@@ -62,22 +68,26 @@ src/main/java
 ## How to Run
 
 1. Clone the repository
-2. Open the project in IntelliJ IDEA
-3. Run `TradeJournalApiApplication`
-4. The API will be available at `http://localhost:8080`
+2. Start Docker Desktop
+3. Start the PostgreSQL container:
+```bash
+docker compose up -d
+```
+4. Open the project in IntelliJ IDEA
+5. Run `TradeJournalApiApplication`
+6. The API will be available at `http://localhost:8080`
 
 ---
 
 ## Testing
 
-The API was tested manually using Postman by sending HTTP requests
-for all CRUD operations and verifying the responses.
+The API was tested manually using Postman by performing full CRUD operations and verifying correct HTTP responses
+and database persistence.
 
 ---
 
 ## Planned Improvements
 
-- Database integration (PostgreSQL + Spring Data JPA)
 - Swagger / OpenAPI documentation
 - Input validation using Bean Validation
 - DTO separation between API and domain model

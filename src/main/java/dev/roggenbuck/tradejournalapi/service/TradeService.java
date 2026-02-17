@@ -1,55 +1,39 @@
 package dev.roggenbuck.tradejournalapi.service;
 
 import dev.roggenbuck.tradejournalapi.model.Trade;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
-
-import java.util.ArrayList;
+import dev.roggenbuck.tradejournalapi.repository.TradeRepository;
 import java.util.List;
-
 
 @Service
 public class TradeService {
-    //Save Data
-    private final List<Trade> trades = new ArrayList<>();
-    private int nextId = 1;
+    private final TradeRepository tradeRepository;
+    public TradeService(TradeRepository tradeRepository){
+        this.tradeRepository = tradeRepository;
+    }
 
     //Create
     public Trade addTrades(Trade trade) {
-        trade.setId(nextId);
-        nextId++;
-        trades.add(trade);
-        return trade;
+        return tradeRepository.save(trade);
     }
 
     //Read
     public List<Trade> findAll() {
-        return trades;
+        return tradeRepository.findAll();
     }
 
     //Update
     public Trade updateTrades(int id, Trade updatedtrade) {
-        Trade existing = findById(id);
+        Trade existing = tradeRepository.findById(id).orElseThrow();
         existing.setSymbol(updatedtrade.getSymbol());
         existing.setEntryPrice(updatedtrade.getEntryPrice());
         existing.setExitPrice(updatedtrade.getExitPrice());
         existing.setPnl(updatedtrade.getPnl());
-        return existing;
+        return tradeRepository.save(existing);
     }
 
     //Delete
     public void deleteTrades(int id){
-        Trade deletedTrade = findById(id);
-        trades.remove(deletedTrade);
-    }
-
-    public Trade findById(int id) {
-        for (Trade t : trades) {
-            if (t.getId() == id) {
-                return t;
-            }
-        }
-        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Trade with id " + id + " not found");
+        tradeRepository.deleteById(id);
     }
 }
